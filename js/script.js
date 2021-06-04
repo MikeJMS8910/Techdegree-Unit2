@@ -47,9 +47,6 @@ function showPage() {
          let newBtn = document.createElement("button")
          newBtn.innerHTML = x
          newBtn.type = "button"
-         if(newBtn.innerHTML == y) {
-            newBtn.className = "active"
-         }
          btnLi.appendChild(newBtn)
       }
    }
@@ -111,6 +108,7 @@ document.querySelectorAll('button').forEach(item => {
      let goTo = e.target.innerHTML
      for(x = 0; x < document.querySelectorAll(".page").length; x++) {
       document.querySelectorAll(".page")[x].style.display = "none"
+      document.querySelectorAll(".page")[x].querySelector('button')[parseInt(e.target.innerHTML) - 1].className = "active"
      }
      document.querySelectorAll(".page")[parseInt(goTo) - 1].style.display = "block"
 
